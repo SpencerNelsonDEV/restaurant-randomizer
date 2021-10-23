@@ -1,29 +1,15 @@
-import React, { Component } from "react";
-import Directory from "./Directory";
-import { CAMPSITES } from "../shared/campsites";
-// import FilmCatalogue from "./FilmCatalogue";
+import React from "react";
+import { ScrollView } from "react-native";
+import SearchBar from "./SearchBar";
+import Restaurant from "./Restaurant";
 
-// class Main extends Component {
-//   render() {
-//     return (
-//       <View>
-//         <FilmCatalogue />
-//       </View>
-//     );
-//   }
-// }
-
-class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      campsites: CAMPSITES,
-    };
-  }
-
-  render() {
-    return <Directory campsites={this.state.campsites} />;
-  }
+export default function Main() {
+  return (
+    <ScrollView style={{ backgroundColor: "#eee", flex: 1 }}>
+      <SearchBar />
+      <Restaurant />
+      <Restaurant />
+      <Restaurant />
+    </ScrollView>
+  );
 }
-
-export default Main;
