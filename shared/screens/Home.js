@@ -1,9 +1,10 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HeaderTabs from "../../components/HeaderTabs";
 import SearchBar from "../../components/SearchBar";
-import Restaurant from "../../components/Restaurant";
+import Categories from "../../components/Categories";
+import RestaurantItems from "../../components/RestaurantItems";
 
 export default function Home() {
   return (
@@ -11,8 +12,11 @@ export default function Home() {
       <View style={{ backgroundColor: "white", padding: 15 }}>
         <HeaderTabs />
         <SearchBar />
-        <Restaurant />
       </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Categories />
+        <RestaurantItems />
+      </ScrollView>
     </SafeAreaView>
   );
 }
