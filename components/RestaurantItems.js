@@ -2,10 +2,10 @@ import React from "react";
 import { Text, Image, View, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-const localRestaurants = [
+export const localRestaurants = [
   {
     name: "Bob's Breakfast",
-    image:
+    image_url:
       "https://images.squarespace-cdn.com/content/v1/544ab456e4b0f3ba72eb800a/1569522763669-CE7Z0PICNA9KHNDNEM7D/o.jpg",
     catigorys: ["Breakfast", "Lunch", "Dinner"],
     reviews: 540,
@@ -14,7 +14,7 @@ const localRestaurants = [
   },
   {
     name: "Saintly Sandwich Shop",
-    image:
+    image_url:
       "https://media.cntraveler.com/photos/5b22bfdff04a775484b99dfc/4:3/w_3000,h_2250,c_limit/Alo-Restaurant__2018_Raffi-Photo-2.jpg",
     catigorys: ["Sandwich", "Lunch", "Dinner"],
     revews: 765,
@@ -23,7 +23,7 @@ const localRestaurants = [
   },
   {
     name: "Royal Ramen",
-    image:
+    image_url:
       "https://d1dxs113ar9ebd.cloudfront.net/225batonrouge/2020/11/BoruRamen-23-1.jpg?q=70&crop=faces&fit=crop&w=1300&h=600",
     catigorys: ["Ramen", "Japanese"],
     revews: 1245,
@@ -32,12 +32,12 @@ const localRestaurants = [
   },
 ];
 
-export default function RestaurantItems() {
+export default function RestaurantItems(props) {
   return (
     <TouchableOpacity activeOpacity={0} style={{ marginBottom: 30 }}>
-      {localRestaurants.map((restaurant, index) => (
+      {props.restaurantData.map((restaurant, index) => (
         <View key={index} style={{ marginTop: 10, padding: 15, backgroundColor: "white" }}>
-          <RestaurantImage image={restaurant.image} />
+          <RestaurantImage image={restaurant.image_url} />
           <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
         </View>
       ))}
