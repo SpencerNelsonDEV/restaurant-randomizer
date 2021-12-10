@@ -2,11 +2,11 @@ import React from "react";
 import { View, Text } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import Ionicons from "react-native-vector-icons/Ionicons";
-// import AntDesign from "react-native-vector-icons/AntDesign";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function SearchBar({ cityHandler }) {
   return (
-    <View style={{ width: "100%", marginTop: 0, flexDirection: "row", padding: 15 }}>
+    <View style={{ marginTop: 15, flexDirection: "row" }}>
       <GooglePlacesAutocomplete
         query={{ key: "AIzaSyCYeH2JJpael-6Gktw9wXsFuYLIc7Dip_U" }}
         onPress={(data, details = null) => {
@@ -14,20 +14,17 @@ export default function SearchBar({ cityHandler }) {
           const city = data.description.split(",")[0];
           cityHandler(city);
         }}
-        placeholder="search"
+        placeholder="Search"
         styles={{
           textInput: {
-            backgroundColor: "whitesmoke",
+            backgroundColor: "#eee",
             borderRadius: 20,
-            fontWeight: "bold",
+            fontWeight: "700",
             marginTop: 7,
           },
           textInputContainer: {
-            backgroundColor: "white",
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            borderTopLeftRadius: 50,
-            borderTopRightRadius: 50,
+            backgroundColor: "#eee",
+            borderRadius: 50,
             flexDirection: "row",
             alignItems: "center",
             marginRight: 10,
@@ -39,24 +36,22 @@ export default function SearchBar({ cityHandler }) {
           </View>
         )}
         renderRightButton={() => (
-          <Text
+          <View
             style={{
-              marginRight: 8,
               flexDirection: "row",
-              backgroundColor: "lightgray",
-              borderBottomLeftRadius: 30,
-              borderBottomRightRadius: 30,
-              borderTopLeftRadius: 30,
+              marginRight: 8,
+              backgroundColor: "white",
+              padding: 9,
               borderTopRightRadius: 30,
+              borderTopLeftRadius: 30,
+              borderBottomRightRadius: 30,
+              borderBottomLeftRadius: 30,
               alignItems: "center",
-              padding: 10,
-              paddingRight: 22,
-              paddingLeft: 22,
             }}
           >
-            {/* <AntDesign name="clockcircle" size={11} style={{ marginRight: 6 }} /> */}
-            Search
-          </Text>
+            <AntDesign name="clockcircle" size={11} style={{ marginRight: 6 }} />
+            <Text>Search</Text>
+          </View>
         )}
       />
     </View>

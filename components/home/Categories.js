@@ -3,27 +3,27 @@ import { Image, Text, ScrollView, View } from "react-native";
 
 const items = [
   {
-    image: require("../assets/images/breakfast.png"),
+    image: require("../../assets/images/breakfast.png"),
     text: "Breakfast",
   },
   {
-    image: require("../assets/images/sandwich.png"),
+    image: require("../../assets/images/sandwich.png"),
     text: "Sandwich",
   },
   {
-    image: require("../assets/images/ramen.png"),
+    image: require("../../assets/images/ramen.png"),
     text: "Ramen",
   },
   {
-    image: require("../assets/images/breakfast.png"),
+    image: require("../../assets/images/breakfast.png"),
     text: "Breakfast",
   },
   {
-    image: require("../assets/images/sandwich.png"),
+    image: require("../../assets/images/sandwich.png"),
     text: "Sandwich",
   },
   {
-    image: require("../assets/images/ramen.png"),
+    image: require("../../assets/images/ramen.png"),
     text: "Ramen",
   },
 ];

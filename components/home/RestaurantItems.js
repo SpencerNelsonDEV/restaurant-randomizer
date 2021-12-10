@@ -63,9 +63,17 @@ const RestaurantImage = (props) => {
 
 const RestaurantInfo = (props) => {
   return (
-    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-      <Text style={{ fontSize: 15, fontWeight: "Bold" }}>{props.name}</Text>
-      <Text style={{ fontSize: 13, fontWeight: "gray" }}>30-45 mins</Text>
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
+      <View>
+        <Text style={{ fontSize: 15, fontWeight: "Bold" }}>{props.name}</Text>
+        <Text style={{ fontSize: 13, color: "gray" }}>30-45 mins</Text>
+      </View>
       <View
         style={{
           backgroundColor: "#eee",
