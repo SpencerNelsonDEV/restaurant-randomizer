@@ -54,6 +54,19 @@ const foods = [
   },
 ];
 
+const styles = StyleSheet.create({
+  menuItemStyle: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    margin: 20,
+  },
+
+  titleStyle: {
+    fontSize: 19,
+    fontWeight: "600",
+  },
+});
+
 export default function MenuItems() {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -70,25 +83,8 @@ export default function MenuItems() {
   );
 }
 
-styles = StyleSheet.create({
-  menuItemStyle: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    margin: 10,
-  },
-  titleStyle: {
-    fontSize: 19,
-    fontWeight: "600",
-  },
-});
-
 const FoodInfo = (props) => (
-  <View
-    style={{
-      width: 240,
-      justifyContent: "space-evenly",
-    }}
-  >
+  <View style={{ width: 240, justifyContent: "space-evenly" }}>
     <Text style={styles.titleStyle}>{props.food.title}</Text>
     <Text>{props.food.description}</Text>
     <Text>{props.food.price}</Text>

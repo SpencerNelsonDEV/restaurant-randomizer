@@ -13,7 +13,7 @@ const yelpRestaurantInfo = {
   description: "Bob's Breakfast is a breakfast restaurant located in the heart of the city",
 };
 
-const { name, image, price, reviews, rating, categories, description } = yelpRestaurantInfo;
+const { name, image, price, reviews, rating, categories } = yelpRestaurantInfo;
 
 const formattedCategories = categories.map((cat) => cat.title).join(" • ");
 

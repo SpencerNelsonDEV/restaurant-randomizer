@@ -71,7 +71,7 @@ const RestaurantInfo = (props) => {
       }}
     >
       <View>
-        <Text style={{ fontSize: 15, fontWeight: "Bold" }}>{props.name}</Text>
+        <Text style={{ fontSize: 15, fontWeight: "bold" }}>{props.name}</Text>
         <Text style={{ fontSize: 13, color: "gray" }}>30-45 mins</Text>
       </View>
       <View
