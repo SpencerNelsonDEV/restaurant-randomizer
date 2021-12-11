@@ -1,17 +1,29 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
-const image =
-  "https://images.squarespace-cdn.com/content/v1/544ab456e4b0f3ba72eb800a/1569522763669-CE7Z0PICNA9KHNDNEM7D/o.jpg";
+const yelpRestaurantInfo = {
+  name: "Bob's Breakfast",
+  image:
+    "https://images.squarespace-cdn.com/content/v1/544ab456e4b0f3ba72eb800a/1569522763669-CE7Z0PICNA9KHNDNEM7D/o.jpg",
+  price: "$$",
+  reviews: "1458",
+  rating: "4.5",
+  categories: [{ title: "Breakfast" }, { title: "American" }],
 
-const title = "Bob's Breakfast";
-const description = "Bob's Breakfast is a breakfast restaurant located in the heart of the city.";
+  description: "Bob's Breakfast is a breakfast restaurant located in the heart of the city",
+};
+
+const { name, image, price, reviews, rating, categories, description } = yelpRestaurantInfo;
+
+const formattedCategories = categories.map((cat) => cat.title).join(" • ");
+
+const description = `${formattedCategories} ${price ? " • " + price : ""} • 🎫 • ${rating} ⭐ (${reviews}+)`;
 
 export default function About() {
   return (
     <View>
       <RestaurantImage image={image} />
-      <RestaurantTitle title={title} />
+      <RestaurantName name={name} />
       <RestaurantDescription description={description} />
     </View>
   );
@@ -21,7 +33,7 @@ const RestaurantImage = (props) => (
   <Image source={{ uri: props.image }} style={{ width: "100%", height: 180 }} />
 );
 
-const RestaurantTitle = (props) => (
+const RestaurantName = (props) => (
   <Text
     style={{
       fontSize: 29,
@@ -30,7 +42,7 @@ const RestaurantTitle = (props) => (
       marginHorizontal: 15,
     }}
   >
-    {props.title}
+    {props.name}
   </Text>
 );
 
