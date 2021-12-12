@@ -1,25 +1,14 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
-const yelpRestaurantInfo = {
-  name: "Bob's Breakfast",
-  image:
-    "https://images.squarespace-cdn.com/content/v1/544ab456e4b0f3ba72eb800a/1569522763669-CE7Z0PICNA9KHNDNEM7D/o.jpg",
-  price: "$$",
-  reviews: "1458",
-  rating: "4.5",
-  categories: [{ title: "Breakfast" }, { title: "American" }],
+export default function About(props) {
+  const { name, image, price, reviews, rating, categories } = props.route.params;
 
-  description: "Bob's Breakfast is a breakfast restaurant located in the heart of the city",
-};
+  const formattedCategories = categories.map((cat) => cat.title).join(" • ");
 
-const { name, image, price, reviews, rating, categories } = yelpRestaurantInfo;
-
-const formattedCategories = categories.map((cat) => cat.title).join(" • ");
-
-const description = `${formattedCategories} ${price ? " • " + price : ""} • 🎫 • ${rating} ⭐ (${reviews}+)`;
-
-export default function About() {
+  const description = `${formattedCategories} ${
+    price ? " • " + price : ""
+  } • 🎫 • ${rating} ⭐ (${reviews}+)`;
   return (
     <View>
       <RestaurantImage image={image} />

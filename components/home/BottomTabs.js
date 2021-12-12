@@ -14,27 +14,24 @@ export default function BottomTabs() {
     >
       <Icon icon="home" text="Home" />
       <Icon icon="search" text="Browse" />
-      <Icon icon="shopping-bag" text="Groceries" />
-      <Icon icon="receipt" text="Orders" />
+      <Icon icon="star" text="favorites" />
       <Icon icon="user" text="Account" />
     </View>
   );
 }
 
-const Icon = (props) => {
-  return (
-    <TouchableOpacity>
-      <View>
-        <FontAwesome5
-          name={props.icon}
-          size={25}
-          style={{
-            marginBottom: 3,
-            alignSelf: "center",
-          }}
-        />
-        <Text>{props.text}</Text>
-      </View>
-    </TouchableOpacity>
-  );
-};
+const Icon = (props) => (
+  <TouchableOpacity>
+    <View>
+      <FontAwesome5
+        name={props.icon}
+        size={25}
+        style={{
+          marginBottom: 3,
+          alignSelf: "center",
+        }}
+      />
+      <Text>{props.text}</Text>
+    </View>
+  </TouchableOpacity>
+);
