@@ -6,9 +6,7 @@ import BottomTabs from "../components/home/BottomTabs";
 import RestaurantItems, { localRestaurants } from "../components/home/RestaurantItems";
 import SearchBar from "../components/home/SearchBar";
 import RandomizerButton from "../components/home/RandomizerButton";
-
-const YELP_API_KEY =
-  "b2Wuzx8kj1Vaaf1ObRaESYm1ZUxnha6NqQTUQAki6Hd15IRco-B-P4KuVQTDk69iblUlKfTb6pI7WfUy86ewa8qw-TmRcd5CfWd3DvjWQUiwYIraWz2WAFka61hzYXYx";
+import { YELP_API_KEY } from "../config/";
 
 export default function Home({ navigation }) {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);

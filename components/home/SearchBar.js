@@ -2,12 +2,13 @@ import React from "react";
 import { View, Text } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { GOOGLE_API_KEY } from "../../config/";
 
 export default function SearchBar({ cityHandler }) {
   return (
     <View style={{ marginTop: 15, flexDirection: "row", backgroundColor: "#cbe4f9" }}>
       <GooglePlacesAutocomplete
-        query={{ key: "AIzaSyCYeH2JJpael-6Gktw9wXsFuYLIc7Dip_U" }}
+        query={{ key: GOOGLE_API_KEY }}
         onPress={(data, details = null) => {
           console.log(data.description);
           const city = data.description;
