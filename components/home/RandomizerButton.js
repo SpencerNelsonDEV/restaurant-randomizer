@@ -21,8 +21,10 @@ export default function RandomizerButton(props) {
         onPress={props.onPress}
       >
         <View style={{ flex: 1, flexDirection: "row" }}>
-          <Text style={{ fontSize: 24, color: "black", marginRight: 18 }}>Something different?</Text>
-          <FontAwesome5 name="dice" size={24} color="black" />
+          <Text style={{ fontSize: 24, color: "#191919", marginRight: 18, fontWeight: "bold" }}>
+            Something different?
+          </Text>
+          <FontAwesome5 name="dice" size={24} color="#191919" />
         </View>
       </TouchableOpacity>
     </View>

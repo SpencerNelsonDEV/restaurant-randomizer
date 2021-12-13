@@ -45,9 +45,18 @@ const Icon = (props) => (
           backgroundColor: "#b3e6b5",
           marginBottom: 3,
           alignSelf: "center",
+
+          color: "#191919",
         }}
       />
-      <Text>{props.text}</Text>
+      <Text
+        style={{
+          fontWeight: "bold",
+          color: "#191919",
+        }}
+      >
+        {props.text}
+      </Text>
     </View>
   </TouchableOpacity>
 );

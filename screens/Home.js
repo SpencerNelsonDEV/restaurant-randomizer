@@ -12,8 +12,8 @@ const YELP_API_KEY =
 
 export default function Home({ navigation }) {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
-  const [city, setCity] = useState("Corvallis");
-  const [limit, setLimit] = useState("limit=12");
+  const [city, setCity] = useState(localRestaurants);
+  const [limit, setLimit] = useState("limit=0");
 
   const getRandomRestaurantFromYelp = () => {
     const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}&${limit}`;
@@ -58,23 +58,34 @@ export default function Home({ navigation }) {
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
           <Text
             style={{
+              backgroundColor: "white",
+              borderRadius: 50,
               fontSize: 30,
               fontWeight: "bold",
               color: "#333",
               textAlign: "center",
+              margin: 20,
+              padding: 20,
+              marginRight: 80,
+              marginTop: 100,
             }}
           >
-            Having a hard time finding a restaurant? Leave it to me!
+            Having a hard time deciding where to eat?
           </Text>
           <Text
             style={{
+              backgroundColor: "white",
+              borderRadius: 50,
               fontSize: 30,
               fontWeight: "bold",
               color: "#333",
               textAlign: "center",
+              margin: 20,
+              padding: 20,
+              marginLeft: 80,
             }}
           >
-            Begin by searching for a city
+            Begin by searching for a city!
           </Text>
         </View>
       )}
