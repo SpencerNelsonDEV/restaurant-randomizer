@@ -2,55 +2,93 @@ import React from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { Divider } from "react-native-elements";
 
-const foods = [
+const reviews = [
   {
-    title: "biscuits and gravy",
-    description: "our famous biscuits and gravy with two eggs and your choice of bacon or sausage",
-    price: "$12.50",
-    image:
-      "https://thumbor.thedailymeal.com/p_4041xLQDwbK2e3Un3ou_o6aAQ=//https://www.thedailymeal.com/sites/default/files/2019/11/21/Chain_Breakfast_Hero_Shutterstock.jpg",
+    "rating": 5,
+    "user": {
+      "id": "W8UK02IDdRS2GL_66fuq6w",
+      "profile_url": "https://www.yelp.com/user_details?userid=W8UK02IDdRS2GL_66fuq6w",
+      "image_url": "https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg",
+      "name": "Ella A.",
+    },
+    "text":
+      "Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...",
+    "time_created": "2016-08-29 00:41:13",
+    "url":
+      "https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=hp8hAJ-AnlpqxCCu7kyCWA&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w",
   },
   {
-    title: '"the baconator"',
-    description: "baconator breakfest sandwich and your choice of side",
-    price: "$14.50",
-    image:
-      "https://images.squarespace-cdn.com/content/v1/544ab456e4b0f3ba72eb800a/1569522763669-CE7Z0PICNA9KHNDNEM7D/o.jpg",
+    "id": "1JNmYjJXr9ZbsfZUAgkeXQ",
+    "rating": 4,
+    "user": {
+      "id": "rk-MwIUejOj6LWFkBwZ98Q",
+      "profile_url": "https://www.yelp.com/user_details?userid=rk-MwIUejOj6LWFkBwZ98Q",
+      "image_url": null,
+      "name": "Yanni L.",
+    },
+    "text":
+      'The "restaurant" is inside a small deli so there is no sit down area. Just grab and go.\n\nInside, they sell individually packaged ingredients so that you can...',
+    "time_created": "2016-09-28 08:55:29",
+    "url":
+      "https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=fj87uymFDJbq0Cy5hXTHIA&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w",
   },
   {
-    title: "the sausage queen",
-    description: "our sausage landslide and two eggs",
-    price: "$11.00",
-    image:
-      "https://thumbor.thedailymeal.com/p_4041xLQDwbK2e3Un3ou_o6aAQ=//https://www.thedailymeal.com/sites/default/files/2019/11/21/Chain_Breakfast_Hero_Shutterstock.jpg",
+    "rating": 5,
+    "user": {
+      "id": "W8UK02IDdRS2GL_66fuq6w",
+      "profile_url": "https://www.yelp.com/user_details?userid=W8UK02IDdRS2GL_66fuq6w",
+      "image_url": "https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg",
+      "name": "Ella A.",
+    },
+    "text":
+      "Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...",
+    "time_created": "2016-08-29 00:41:13",
+    "url":
+      "https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=hp8hAJ-AnlpqxCCu7kyCWA&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w",
   },
   {
-    title: '"the baconator"',
-    description: "baconator breakfest sandwich and your choice of side",
-    price: "$14.50",
-    image:
-      "https://images.squarespace-cdn.com/content/v1/544ab456e4b0f3ba72eb800a/1569522763669-CE7Z0PICNA9KHNDNEM7D/o.jpg",
+    "id": "1JNmYjJXr9ZbsfZUAgkeXQ",
+    "rating": 4,
+    "user": {
+      "id": "rk-MwIUejOj6LWFkBwZ98Q",
+      "profile_url": "https://www.yelp.com/user_details?userid=rk-MwIUejOj6LWFkBwZ98Q",
+      "image_url": null,
+      "name": "Yanni L.",
+    },
+    "text":
+      'The "restaurant" is inside a small deli so there is no sit down area. Just grab and go.\n\nInside, they sell individually packaged ingredients so that you can...',
+    "time_created": "2016-09-28 08:55:29",
+    "url":
+      "https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=fj87uymFDJbq0Cy5hXTHIA&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w",
   },
   {
-    title: "biscuits and gravy",
-    description: "our famous biscuits and gravy with two eggs and your choice of bacon or sausage",
-    price: "$12.50",
-    image:
-      "https://thumbor.thedailymeal.com/p_4041xLQDwbK2e3Un3ou_o6aAQ=//https://www.thedailymeal.com/sites/default/files/2019/11/21/Chain_Breakfast_Hero_Shutterstock.jpg",
+    "rating": 5,
+    "user": {
+      "id": "W8UK02IDdRS2GL_66fuq6w",
+      "profile_url": "https://www.yelp.com/user_details?userid=W8UK02IDdRS2GL_66fuq6w",
+      "image_url": "https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg",
+      "name": "Ella A.",
+    },
+    "text":
+      "Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...",
+    "time_created": "2016-08-29 00:41:13",
+    "url":
+      "https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=hp8hAJ-AnlpqxCCu7kyCWA&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w",
   },
   {
-    title: '"the baconator"',
-    description: "baconator breakfest sandwich and your choice of side",
-    price: "$14.50",
-    image:
-      "https://images.squarespace-cdn.com/content/v1/544ab456e4b0f3ba72eb800a/1569522763669-CE7Z0PICNA9KHNDNEM7D/o.jpg",
-  },
-  {
-    title: "the sausage queen",
-    description: "our sausage landslide and two eggs",
-    price: "$11.00",
-    image:
-      "https://thumbor.thedailymeal.com/p_4041xLQDwbK2e3Un3ou_o6aAQ=//https://www.thedailymeal.com/sites/default/files/2019/11/21/Chain_Breakfast_Hero_Shutterstock.jpg",
+    "id": "1JNmYjJXr9ZbsfZUAgkeXQ",
+    "rating": 4,
+    "user": {
+      "id": "rk-MwIUejOj6LWFkBwZ98Q",
+      "profile_url": "https://www.yelp.com/user_details?userid=rk-MwIUejOj6LWFkBwZ98Q",
+      "image_url": null,
+      "name": "Yanni L.",
+    },
+    "text":
+      'The "restaurant" is inside a small deli so there is no sit down area. Just grab and go.\n\nInside, they sell individually packaged ingredients so that you can...',
+    "time_created": "2016-09-28 08:55:29",
+    "url":
+      "https://www.yelp.com/biz/la-palma-mexicatessen-san-francisco?hrid=fj87uymFDJbq0Cy5hXTHIA&adjust_creative=0sidDfoTIHle5vvHEBvF0w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=0sidDfoTIHle5vvHEBvF0w",
   },
 ];
 
@@ -61,7 +99,7 @@ const styles = StyleSheet.create({
     margin: 20,
   },
 
-  titleStyle: {
+  userStyle: {
     fontSize: 19,
     fontWeight: "600",
   },
@@ -70,11 +108,11 @@ const styles = StyleSheet.create({
 export default function MenuItems() {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      {foods.map((food, index) => (
+      {reviews.map((reviews, index) => (
         <View key={index}>
           <View style={styles.menuItemStyle}>
-            <FoodInfo food={food} />
-            <FoodImage food={food} />
+            <ReviewInfo review={reviews} />
+            <ReviewImage review={reviews} />
           </View>
           <Divider width={0.5} orientation="vertical" style={{ marginHorizontal: 20 }} />
         </View>
@@ -83,18 +121,18 @@ export default function MenuItems() {
   );
 }
 
-const FoodInfo = (props) => (
+const ReviewInfo = (props) => (
   <View style={{ width: 240, justifyContent: "space-evenly" }}>
-    <Text style={styles.titleStyle}>{props.food.title}</Text>
-    <Text>{props.food.description}</Text>
-    <Text>{props.food.price}</Text>
+    <Text style={styles.userStyle}>{props.review.user.name}</Text>
+    <Text>{props.review.text}</Text>
+    <Text>{props.review.rating}</Text>
   </View>
 );
 
-const FoodImage = (props) => (
+const ReviewImage = (props) => (
   <View>
     <Image
-      source={{ uri: props.food.image }}
+      source={{ uri: props.review.user.image_url }}
       style={{
         width: 100,
         height: 100,

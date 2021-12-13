@@ -2,18 +2,17 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 
 export default function About(props) {
-  const { name, image, price, reviews, rating, categories } = props.route.params;
+  const { name, image, phone, reviews, rating, categories, address } = props.route.params;
 
   const formattedCategories = categories.map((cat) => cat.title).join(" • ");
 
-  const description = `${formattedCategories} ${
-    price ? " • " + price : ""
-  } • 🎫 • ${rating} ⭐ (${reviews}+)`;
+  const description = `${formattedCategories} • ${rating} ⭐ (${reviews}+) `;
   return (
     <View>
       <RestaurantImage image={image} />
       <RestaurantName name={name} />
       <RestaurantDescription description={description} />
+      <RestaurantContact phone={phone} address={address} />
     </View>
   );
 }
@@ -46,4 +45,35 @@ const RestaurantDescription = (props) => (
   >
     {props.description}
   </Text>
+);
+
+const RestaurantContact = (props) => (
+  <View
+    style={{
+      justifyContent: "space-between",
+      marginTop: 10,
+      marginHorizontal: 15,
+    }}
+  >
+    <Text
+      style={{
+        marginTop: 10,
+        marginHorizontal: 15,
+        fontWeight: "400",
+        fontSize: 15.5,
+      }}
+    >
+      {props.phone}
+    </Text>
+    <Text
+      style={{
+        marginTop: 10,
+        marginHorizontal: 15,
+        fontWeight: "400",
+        fontSize: 15.5,
+      }}
+    >
+      {props.address}
+    </Text>
+  </View>
 );
