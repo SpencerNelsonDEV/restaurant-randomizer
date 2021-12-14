@@ -12,6 +12,7 @@ export default function Home({ navigation }) {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
   const [city, setCity] = useState(localRestaurants);
   const [limit, setLimit] = useState("limit=0");
+  const [id, setId] = useState("");
 
   const getRandomRestaurantFromYelp = () => {
     const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}&${limit}`;
@@ -53,7 +54,7 @@ export default function Home({ navigation }) {
           <RandomizerButton onPress={() => getRandomRestaurantFromYelp()} />
         </ScrollView>
       ) : (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center", postion: "absolute" }}>
           <Text
             style={{
               backgroundColor: "white",

@@ -1,5 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Entypo from "react-native-vector-icons/Entypo";
 
 export default function About(props) {
   const { name, image, phone, reviews, rating, categories, address } = props.route.params;
@@ -50,30 +52,38 @@ const RestaurantDescription = (props) => (
 const RestaurantContact = (props) => (
   <View
     style={{
-      justifyContent: "space-between",
-      marginTop: 10,
       marginHorizontal: 15,
     }}
   >
-    <Text
+    <View
       style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
         marginTop: 10,
-        marginHorizontal: 15,
-        fontWeight: "400",
-        fontSize: 15.5,
       }}
     >
-      {props.phone}
-    </Text>
-    <Text
+      <View>
+        <Text style={{ fontSize: 13, color: "black" }}>{props.phone}</Text>
+      </View>
+      <View style={{ flexDirection: "row" }}>
+        <MaterialCommunityIcons name="cellphone-iphone" size={20} color="#000" />
+      </View>
+    </View>
+    <View
       style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
         marginTop: 10,
-        marginHorizontal: 15,
-        fontWeight: "400",
-        fontSize: 15.5,
       }}
     >
-      {props.address}
-    </Text>
+      <View>
+        <Text style={{ fontSize: 13, color: "black" }}>{props.address}</Text>
+      </View>
+      <View style={{ flexDirection: "row" }}>
+        <Entypo name="location-pin" size={20} color="#000" />
+      </View>
+    </View>
   </View>
 );
