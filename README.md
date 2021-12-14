@@ -8,3 +8,5 @@ The user will input their area code and click a button to generate the restauran
 As stated in the overview, I will be using Yelp’s api data of restaurants. I will be using a reusable component  that will render three times, or as many or few as the user wants. The component will be rendering a card containing a random restaurant’s data that is located near the user’s zip code.
 ## Navigation, About, Contact components?
 I’m not sure how necessary these components will be at this point.
+## Credit
+This project was inspired by Clever Programmer on his youtube video LIVE-uber-eats-clone-youtube , github: [CleverProgrammers](https://github.com/CleverProgrammers/LIVE-uber-eats-clone-youtube).
